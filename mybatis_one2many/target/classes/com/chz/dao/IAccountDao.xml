@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace属性必须是dao接口的全限定名,且不可缺少-->
+<mapper namespace="com.chz.dao.IAccountDao">
+    <!--    mybatis默认二级缓冲开启标志-->
+    <!--    <cache/>-->
+
+    <!--    ehcache开启的声明-->
+<!--    <cache type="org.mybatis.caches.ehcache.EhcacheCache">-->
+<!--        &lt;!&ndash;        可以覆盖Ehcache的全局变量&ndash;&gt;-->
+<!--        <property name="maxElementsInMemory" value="2000"/>-->
+<!--        <property name="maxElementsOnDisk" value="3000"/>-->
+<!--    </cache>-->
+
+    <resultMap id="accountMap" type="account">
+        <id property="ID" column="aid"/>
+        <result property="UID" column="uid"/>
+        <result property="MONEY" column="money"/>
+        <!--建立一对一得关系映射,配置封装user得内容
+        通过 property是指定哪个是联合对象 javaType是指定这个属性的对象类型
+            account的user属性对应account表的Uid
+            association是一对一或多对一   collection是一对多-->
+        <association property="user" javaType="user">
+            <id property="id" column="id"/>
+            <result property="username" column="username"/>
+            <result property="address" column="address"/>
+            <result property="sex" column="sex"/>
+            <result property="birthday" column="birthday"/>
+        </association>
+    </resultMap>
+    <!--    懒加载map-->
+    <resultMap id="lazyMap" type="account">
+        <id property="ID" column="aid"/>
+        <result property="UID" column="uid"/>
+        <result property="MONEY" column="money"/>
+        <!--延迟加载(表必须是由外键关联的,需要在config中写出),请求查询后加载select对应的sql
+             property标识将延迟加载的结果封装到该属性中,
+            一对多或是多对多是采用collection,column另一张表的外键(被当作参数传入select)
+            select标签对应mapper中sql的id-->
+        <association property="user" javaType="user" column="uid"
+                     select="com.chz.dao.IUserDao.findByID" fetchType="lazy"/>
+    </resultMap>
+
+    <!--    flushCache标识清除二级缓存,即使没有commit也会访问多次-->
+    <select id="lazySelect" resultMap="lazyMap" flushCache="true">
+        select * from account
+    </select>
+    <!--    m和id对应map的key和表的类名(也可以不加但是这样就拿不到map中的value),value对应表中的值,只返回一行数据-->
+    <select id="queryReturnHashMap" resultType="HashMap">
+        select money "m" ,uid "id" from account where aid=#{i}
+    </select>
+    <!--    返回多个map,返回的是一个list-->
+    <select id="queryReturnHashMaps" resultType="HashMap">
+        select money "m" ,uid "id" from account
+    </select>
+    <!--    useCache=false关闭指定sql的二级缓冲(禁用)，默认true-->
+    <select id="findAll" resultMap="accountMap" useCache="false">
+        select a.aid aid,a.uid,a.money money,u.* from account a,user u where a.uid=u.id
+    </select>
+    <!--    查询一行-->
+    <!--    sql中的注解不对#{}和${}生效,这两者都表示传参-->
+    <!--     1.简单类型参数时#{任意},必须时${value}-->
+    <!--     2.多个参数时#{'属性名'}自动加单引号,${属性名}不加''-->
+    <select id="findByID" resultType="account">
+        select * from account where aid=#{i}
+    </select>
+
+    <select id="findByTwoArgs" resultType="account">
+                select * from account where aid=#{arg0} and money=#{arg1}
+    </select>
+
+    <select id="orderByColumn" resultType="account">
+--         select * from account order by money desc 静态排序
+--         select * from account order by 排序字段 desc 动态排序
+            select * from account order by ${value} desc
+    </select>
+    <!--    首写字母小写,查询出来的结果不用于列数对齐-->
+    <select id="findInfo" resultType="accountUser">
+        select * from account a,user u where a.UID = u.id
+    </select>
+
+<!--    useGeneratedKeys表示采用数据库主键自增,keyProperty指定主键值回写的字段对应bean的属性-->
+    <insert id="insertAccount" parameterType="account" useGeneratedKeys="true" keyProperty="ID">
+        insert into account (uid,money) values (#{UID},#{MONEY})
+    </insert>
+
+    <delete id="deleteAccount" parameterType="account">
+        delete from account a where a.aid= #{ID}
+    </delete>
+
+    <update id="updateAccount" parameterType="account">
+        update account  set money=#{MONEY} where aid=#{ID}
+    </update>
+
+    <select id="findByUid" resultType="account">
+        select * from account where uid=#{uid}
+    </select>
+
+</mapper>
+        <!--配置文件必须和dao接口的包结构相同-->

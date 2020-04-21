@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace属性必须是dao接口的全限定名-->
+<mapper namespace="com.chz.dao.IUserDao">
+    <!--        配置查询所有,id必须是dao接口的方法名字-->
+<!--    如果只有一个参数{}中可以任意命名 parameterType是#{}要传的参数的位置或类型,resultType是把结果返回或封装的位置-->
+    <select id="findAll" resultType="com.chz.entity.User">
+        select * from user;
+    </select>
+<!--    保存用户 -->
+    <insert id="saveUser" parameterType="com.chz.entity.User">
+-- keyProperty对应实体类属性 keyColumn对应数据库的列名
+        <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+        insert into user values (#{id},#{username},#{addr},#{gender},#{birthday});
+    </insert>
+<!--    更新用户-->
+    <update id="updateUser" parameterType="com.chz.entity.User">
+        update user set username=#{username} where id=#{id};
+    </update>
+<!--    删除用户-->
+    <delete id="deleteUser" parameterType="com.chz.entity.User">
+        delete from user where id=#{id};
+    </delete>
+<!--    查询一行-->
+    <select id="findByID"  parameterType="int" resultType="com.chz.entity.User">
+        select * from user where id=#{id}
+    </select>
+<!--    模糊查询-->
+    <select id="findByName" parameterType="String" resultType="com.chz.entity.User">
+        select * from user where username like #{username}
+    </select>
+<!--    查询用户人数-->
+    <select id="findUserCount" resultType="int">
+        select count(*) from user
+    </select>
+
+</mapper>
+        <!--配置文件必须和dao接口的包结构相同-->

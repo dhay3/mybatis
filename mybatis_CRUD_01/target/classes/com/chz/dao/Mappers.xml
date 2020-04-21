@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace属性必须是dao接口的全限定名-->
+<mapper namespace="com.chz.dao.IUserDao">
+<!--    配置实体类属性对应数据库列名关系,配置了对应关系resultType可以换成resultMap填id-->
+    <resultMap id="userMap" type="com.chz.entity.User">
+<!--        主键字段对应 property对应实体类得属性 column对应数据库表得属性-->
+        <id property="uId" column="id"></id>
+<!--        非主键字段对应-->
+        <result property="uName" column="username"></result>
+        <result property="gender" column="sex"></result>
+        <result property="addr" column="address"></result>
+    </resultMap>
+    <!--        配置查询所有,id必须是dao接口的方法名字-->
+<!--    如果只有一个参数{}中可以任意命名 parameterType是#{}要传的参数的位置或类型,resultType是把结果返回或封装的位置-->
+    <select id="findAll" resultMap="userMap" >
+        select * from user;
+    </select>
+<!--    保存用户 -->
+    <insert id="saveUser" parameterType="com.chz.entity.User" >
+-- keyProperty对应实体类属性 keyColumn对应数据库的列名
+        <selectKey keyProperty="uId" keyColumn="id" resultType="int" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+        insert into user values #{uName},#{addr},#{gender},#{birthday});
+    </insert>
+<!--    更新用户-->
+    <update id="updateUser" parameterType="com.chz.entity.User">
+        update user set username=#{uName} where id=#{uId};
+    </update>
+<!--    删除用户-->
+    <delete id="deleteUser" parameterType="com.chz.entity.User">
+        delete from user where id=#{uId};
+    </delete>
+<!--    查询一行-->
+    <select id="findByID"  parameterType="int" resultType="com.chz.entity.User">
+        select * from user where id=#{uId}
+    </select>
+<!--    模糊查询-->
+    <select id="findByName" parameterType="String" resultType="com.chz.entity.User">
+        select * from user where username like #{uName}
+    </select>
+<!--    查询用户人数-->
+    <select id="findUserCount" resultType="int">
+        select count(*) from user
+    </select>
+<!--    查询定义在其他类中的信息-->
+    <select id="queryVo" parameterType="com.chz.entity.QueryVo" resultType="com.chz.entity.User">
+        select * from user where username=#{u.uName}
+    </select>
+
+</mapper>
+        <!--配置文件必须和dao接口的包结构相同-->

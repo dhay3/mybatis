@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UseDao">
+        <resultMap id="discriminator" type="user">
+            <id column="id" property="id"/>
+            <result column="username" property="username"/>
+            <discriminator javaType="String" column="sex">
+<!--                如果表中的sex字段的值时男就username就是id,女就是sex,
+                    resultType必须要加指的是什么或是resultMap-->
+                <case value="男" resultType="user">
+                    <result property="username" column="address"/>
+                </case>
+                <case value="女" resultType="user">
+                    <result property="username" column="sex"/>
+                </case>
+            </discriminator>
+        </resultMap>
+
+        <select id="queryAll" resultMap="discriminator">
+            select * from user
+        </select>
+</mapper>

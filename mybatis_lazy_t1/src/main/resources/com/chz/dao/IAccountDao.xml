@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace属性必须是dao接口的全限定名-->
+<mapper namespace="com.chz.dao.IAccountDao">
+    <resultMap id="accountMap" type="com.chz.entity.Account">
+        <id property="ID" column="id"/>
+        <result property="UID" column="uid"/>
+        <result property="MONEY" column="money"/>
+        <!--延迟加载(表必须是由外键关联的,需要在config中写出),请求查询后加载select对应的sql
+             property标识将延迟加载的结果封装到该属性中,
+            一对多或是多对多是采用collection,column是关联从表的字段(被当作参数传入select)
+            ,select标签对应mapper中sql的id
+            fetchType指定加载类型,全局中开启懒加载不需要配置该属性,全局未开启懒加载配置该属性
+            -->
+        <association property="user" column="UID" javaType="com.chz.entity.User" fetchType="lazy"
+                     select="com.chz.dao.IUserDao.findByID"/>
+    </resultMap>
+    <select id="findAll" resultMap="accountMap">
+        select * from account
+    </select>
+
+    <select id="findById" parameterType="int" resultType="account">
+        select * from account where uid=#{id}
+    </select>
+</mapper>
+

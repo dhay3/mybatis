@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace属性必须是dao接口的全限定名-->
+<mapper namespace="com.chz.dao.IUserDao">
+    <!--    二级缓冲开启标志-->
+    <!--    <cache/>-->
+
+    <!--    ehcache开启的声明-->
+    <!--    <cache type="org.mybatis.caches.ehcache.EhcacheCache">-->
+    <!--        &lt;!&ndash;        可以覆盖Ehcache的全局变量&ndash;&gt;-->
+    <!--        <property name="maxElementsInMemory" value="1000"/>-->
+    <!--        <property name="maxElementsOnDisk" value="2000"/>-->
+    <!--    </cache>-->
+<!--    通过这种方式的resultMap必须在sql中写全sql语句-->
+    <resultMap id="userMap" type="user">
+        <id property="id" column="id"/>
+        <result property="sex" column="sex"/>
+        <result property="address" column="address"/>
+        <result property="birthday" column="birthday"/>
+        <result property="username" column="username"/>
+        <result property="communist" column="communist" javaType="Boolean" jdbcType="INTEGER"/>
+        <!--        不是嵌套查询可以不用column-->
+        <collection property="accounts" ofType="account">
+            <id property="ID" column="aid"/>
+            <result property="UID" column="uid"/>
+            <result property="MONEY" column="money"/>
+        </collection>
+    </resultMap>
+<!--    通过这种方式的resultMap可以不写全部sql-->
+    <resultMap id="lazyMap" type="user">
+        <id property="id" column="id"/>
+        <result property="sex" column="sex"/>
+        <result property="address" column="address"/>
+        <result property="birthday" column="birthday"/>
+        <result property="username" column="username"/>
+        <result property="communist" column="communist" javaType="Boolean" jdbcType="INTEGER"/>
+        <!--        如果是嵌套查询必须要有column是另外一张表的外键-->
+        <collection property="accounts" ofType="account" column="id" fetchType="lazy"
+                    select="com.chz.dao.IAccountDao.findByUid"/>
+    </resultMap>
+    <select id="queryByKey" resultType="HashMap">
+        select * from user
+    </select>
+    <select id="lazySelect" resultMap="lazyMap">
+        select * from user
+    </select>
+    <!--    javaType  to  jdbcType-->
+    <insert id="communistDie" parameterType="user">
+        insert into user (username,birthday,sex,address,communist)
+--         添加BaseTypeHandler的路径到参数中
+        values(#{username},#{birthday},#{sex},#{address},#{communist,typeHandler=com.chz.transfer.TypeTransfer})
+    </insert>
+    <!--    注意sql中的bit对应java中的Boolean(可以不用转)-->
+    <select id="pollCommunist" resultMap="userMap">
+        select * from user where communist=#{deadornot}
+    </select>
+    <!--   第一种方式采用加字符串拼接-->
+    <!--    select * from user where username like #{username}-->
+    <!--     select * from user where username like '%${username}%'-->
+    <!--   错误select * from user where username like #{%${username}%}会把%${username}%当成user的属性-->
+    <select id="findByUsername" resultType="user">
+--         类的属性名与properties中key不能相同
+        select * from user where username like '%${username}%'
+    </select>
+    <!--    #{}和${}支持级联属性-->
+    <select id="findByCascade" resultType="user" parameterType="user">
+        select * from user where address=#{addressBean.homeAddress}
+    </select>
+    <!--    paramType用hashMap,参数对应map的key-->
+    <select id="findByHashMap" resultType="user" parameterType="HashMap">
+        select * from user where username=#{usernameK} and sex=#{sexK}
+    </select>
+    <!--    mapper所有的sql语句中的statementType默认是STATEMENT,存储过程用CALLABLE(前提要有对应的procedure)-->
+    <!--    一般存储过程用HashMap-->
+    <!--    执行sql语句在外层加{}可以换行,必须添加mode,OUT要指明类型,IN可以不用指明类型-->
+    <select id="queryByProcedure" statementType="CALLABLE" parameterType="HashMap">
+        {call mybatis_select(
+        #{isCommunistK,mode=IN,jdbcType=BIT},
+        #{countK,mode=OUT,jdbcType=INTEGER}
+        )}
+    </select>
+
+    <select id="findAll" resultMap="userMap">
+--     这里面的参数是数据库中的而不是resultMap中
+        select * from user u ,account a where u.id=a.uid
+    </select>
+    <!--    查询一行-->
+    <select id="findByID" parameterType="int" resultType="user">
+        select * from user where ID=#{ID}
+    </select>
+
+    <insert id="insertUser" parameterType="user">
+        insert into user (id,username,birthday,sex,address) values (#{id},#{username},#{birthday},#{sex},#{address})
+    </insert>
+
+    <delete id="deleteByProcedure" statementType="CALLABLE">
+        {call mybatis_delete(#{exceute,mode=IN})}
+    </delete>
+
+    <delete id="deleteUser" parameterType="user">
+        delete from user where address=#{address}
+    </delete>
+
+    <update id="updateUser" parameterType="user">
+        update user set address = #{address} where username = #{username}
+    </update>
+
+</mapper>
+        <!--配置文件不一定和dao接口的包结构相同(相同)-->

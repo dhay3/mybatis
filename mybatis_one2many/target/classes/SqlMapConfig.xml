@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--mybatis主配置文件-->
+<!--配置环境-->
+<configuration>
+    <!--    properties 必须放在第一行,加载properties文件-->
+    <properties resource="jdbc_info.properties"/>
+
+    <settings>
+        <!--    开启日志,如果不指定,mybatis就会根据以下顺序寻找日志
+        SLE4J ,Apache Commons Logging ,Log4j 2 ,Log4j ,JDK Logging
+       一般采用log4j,需要log4j jar和编写的配置文件(文件名必须叫log4j)-->
+        <setting name="logImpl" value="LOG4J"/>
+        <!--        开启二级缓冲(一级缓存默认存在)声明,同时要在mapper中写出开启的标志,默认关闭二级缓冲(会造成数据脏读)-->
+        <setting name="cacheEnabled" value="true"/>
+        <!--        开启延迟(懒)加载-->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!--        将积极加载改为按需加载,默认是false可以不配-->
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+    <typeAliases>
+        <!--        自动扫描包下的类(除接口和匿名内部类),起别名包名下的类名的首写字母小写就是这个类的别名
+                    接口和匿名内部类不能起别名-->
+        <package name="com.chz.entity"/>
+    </typeAliases>
+    <!--    配置类型转换器-->
+    <typeHandlers>
+        <typeHandler handler="com.chz.transfer.TypeTransfer" jdbcType="INTEGER" javaType="Boolean"/>
+    </typeHandlers>
+    <!--    单独设置别名-->
+    <!--    <typeAliases>-->
+    <!--        <typeAlias type="com.chz.entity.Account" alias="account"/>-->
+    <!--    </typeAliases>-->
+    <environments default="mysql">
+        <!--    通过environment的default值和id值指定mybatis的运行时的开发环境-->
+        <environment id="mysql">
+            <!--            配置事务提交的方式
+                JDBC:利用传统的JDBC方式(手动commit,rollback,close)
+                MANAGED:将事务交由其他组件自动托管(如spring),默认关闭连接-->
+            <transactionManager type="JDBC"/>
+            <!--            如果采用c3p0要让一个类继承UnPooledDataSourceFactory,并在重写的方法中让
+                            this.dataSource=new comboPooledDataSource()-->
+            <dataSource type="POOLED">
+                <!--            配置连接数据库的4个基本信息-->
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+        <!--        可以有多个environment,通过default指定-->
+        <environment id="test">
+            <!--            数据源:
+               UNPOOLED:传统jdbc连接模式,会自动提交
+               POOLED:使用数据库连接池,不会自动提交,需要用户手动设置
+               JNDI:从tomcat中获取
+               -->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis_test"/>
+                <property name="user" value="root"/>
+                <property name="password" value="12345"/>
+            </dataSource>
+            <!--            dbcp连接池配置同理c3p0,type是继承UnPooledDataSourceFactory的类-->
+            <!--            <dataSource type="org.util.DBCPDataSource">-->
+            <!--                <property name="driverClassName" value="${jdbc.driver}"/>-->
+            <!--                <property name="url" value="${jdbc.url}"/>-->
+            <!--                <property name="username" value="${jdbc.username}"/>-->
+            <!--                <property name="password" value="${jdbc.password}"/>-->
+            <!--            </dataSource>-->
+        </environment>
+    </environments>
+    <!--        指定映射配置的文件的位置,映射配置文件指的是每个dao独立的配置文件
+                可以不存在和接口相同的包下-->
+    <mappers>
+<!--        如果要用package扫描mapper的文件名一定要和接口的名字一样,路径可以不同
+            使用mapper扫描时可以文件名不一样
+-->
+        <package name="com/chz/dao"/>
+    </mappers>
+</configuration>

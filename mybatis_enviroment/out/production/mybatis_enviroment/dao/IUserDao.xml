@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.IUserDao">
+<!--    通过databaseId(对应DB_VENDOR的value)来指定什么数据库下运行什么sql语句
+        如果同时存在不带databaseId的优先使用带标签的
+-->
+<!--    mysql独有-->
+    <select id="queryAll" resultType="user" databaseId="mysql">
+        select * from login limit 0,10
+    </select>
+<!--    oracle独有-->
+    <select id="queryAll" resultType="user" databaseId="oracle">
+        select rownum,* from login
+    </select>
+</mapper>

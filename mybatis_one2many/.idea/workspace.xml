@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="64c3485e-0709-41c5-a04f-7f650c49be06" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="lo4j" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/chz/dao/IAccountDao.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven\repository" />
+        <option name="mavenHome" value="D:/maven/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="jdkForImporter" value="#JAVA_HOME" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1YSvajH2M7pFEY66UjqlE0RI1jb" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mybatis_plus" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace for idea\mybatis_one2many\src\main\resources" />
+      <recent name="D:\workspace for idea\mybatis_one2many\src\main\resources\com\chz\dao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.chz.util" />
+      <recent name="com.chz.transfer" />
+      <recent name="com.chz.test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace for idea\mybatis_one2many\src\main\java\com\chz" />
+      <recent name="D:\workspace for idea\mybatis_one2many\src\main\resources\com" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.Account_Test.insertUser">
+    <configuration name="Account_Test.insertUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis_one2many" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chz.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chz.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chz.test.Account_Test" />
+      <option name="METHOD_NAME" value="insertUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Account_Test.queryReturnHashMaps" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis_one2many" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chz.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chz.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chz.test.Account_Test" />
+      <option name="METHOD_NAME" value="queryReturnHashMaps" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDao_Test.lazySelect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis_one2many" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chz.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chz.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chz.test.UserDao_Test" />
+      <option name="METHOD_NAME" value="lazySelect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDao_Test.pollCommunist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis_one2many" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chz.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chz.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chz.test.UserDao_Test" />
+      <option name="METHOD_NAME" value="pollCommunist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDao_Test.selectMethod" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis_one2many" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chz.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chz.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chz.test.UserDao_Test" />
+      <option name="METHOD_NAME" value="selectMethod" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_Default_(Template)_Project" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="11467" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Account_Test.insertUser" />
+        <item itemvalue="JUnit.UserDao_Test.lazySelect" />
+        <item itemvalue="JUnit.UserDao_Test.selectMethod" />
+        <item itemvalue="JUnit.UserDao_Test.pollCommunist" />
+        <item itemvalue="JUnit.Account_Test.queryReturnHashMaps" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64c3485e-0709-41c5-a04f-7f650c49be06" name="Default Changelist" comment="" />
+      <created>1571232549045</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571232549045</updated>
+      <workItem from="1571232551754" duration="4343000" />
+      <workItem from="1571288245319" duration="6768000" />
+      <workItem from="1571391030225" duration="3594000" />
+      <workItem from="1571400931141" duration="6174000" />
+      <workItem from="1571414388029" duration="159000" />
+      <workItem from="1571460677585" duration="2576000" />
+      <workItem from="1571464155399" duration="1143000" />
+      <workItem from="1571559785929" duration="1232000" />
+      <workItem from="1571576702466" duration="474000" />
+      <workItem from="1571577817122" duration="2890000" />
+      <workItem from="1571661551764" duration="18000" />
+      <workItem from="1571890863279" duration="1380000" />
+      <workItem from="1571910630588" duration="6374000" />
+      <workItem from="1572010995684" duration="1836000" />
+      <workItem from="1572016346483" duration="2000" />
+      <workItem from="1572163534172" duration="2287000" />
+      <workItem from="1572183078276" duration="19000" />
+      <workItem from="1572500661972" duration="4476000" />
+      <workItem from="1572749447285" duration="17000" />
+      <workItem from="1572752374902" duration="639000" />
+      <workItem from="1572849177212" duration="2079000" />
+      <workItem from="1573270207429" duration="710000" />
+      <workItem from="1573395837485" duration="624000" />
+      <workItem from="1573453671874" duration="1342000" />
+      <workItem from="1573484990274" duration="628000" />
+      <workItem from="1573518972880" duration="9000" />
+      <workItem from="1573637660427" duration="1377000" />
+      <workItem from="1573694226133" duration="28000" />
+      <workItem from="1573694650482" duration="3178000" />
+      <workItem from="1573831395891" duration="20000" />
+      <workItem from="1573867028412" duration="4749000" />
+      <workItem from="1573873362562" duration="405000" />
+      <workItem from="1573989394116" duration="613000" />
+      <workItem from="1573996402304" duration="616000" />
+      <workItem from="1574059012958" duration="871000" />
+      <workItem from="1574309202473" duration="3694000" />
+      <workItem from="1576070921624" duration="1992000" />
+      <workItem from="1577599289665" duration="1341000" />
+      <workItem from="1578659793528" duration="11000" />
+      <workItem from="1578665316495" duration="2004000" />
+      <workItem from="1578708551975" duration="506000" />
+      <workItem from="1581222978465" duration="5297000" />
+      <workItem from="1581420300544" duration="240000" />
+      <workItem from="1581421343140" duration="673000" />
+      <workItem from="1581501809453" duration="138000" />
+      <workItem from="1581612703111" duration="116000" />
+      <workItem from="1581666258290" duration="317000" />
+      <workItem from="1581736812289" duration="16000" />
+      <workItem from="1581752842204" duration="23000" />
+      <workItem from="1581753150676" duration="107000" />
+      <workItem from="1581950709047" duration="37000" />
+      <workItem from="1582948877698" duration="23000" />
+      <workItem from="1583132550924" duration="1167000" />
+      <workItem from="1583140457858" duration="37000" />
+      <workItem from="1583141119262" duration="945000" />
+      <workItem from="1583143154534" duration="16000" />
+      <workItem from="1583147827619" duration="513000" />
+      <workItem from="1583148985272" duration="3578000" />
+      <workItem from="1583158020414" duration="6820000" />
+      <workItem from="1583164968073" duration="620000" />
+      <workItem from="1583194404587" duration="27583000" />
+      <workItem from="1583292867822" duration="10267000" />
+      <workItem from="1583328119519" duration="1077000" />
+      <workItem from="1583332404241" duration="9309000" />
+      <workItem from="1583371679798" duration="471000" />
+      <workItem from="1583375469271" duration="11812000" />
+      <workItem from="1583398648429" duration="68000" />
+      <workItem from="1583398848137" duration="1134000" />
+      <workItem from="1583400954292" duration="1697000" />
+      <workItem from="1583404152671" duration="527000" />
+      <workItem from="1583404995328" duration="55000" />
+      <workItem from="1584408439235" duration="21000" />
+      <workItem from="1584409031153" duration="410000" />
+      <workItem from="1584409463227" duration="590000" />
+      <workItem from="1584432942685" duration="3544000" />
+      <workItem from="1584436939055" duration="2188000" />
+      <workItem from="1584439594061" duration="665000" />
+      <workItem from="1584444759407" duration="15000" />
+      <workItem from="1584446477713" duration="473000" />
+      <workItem from="1584458268740" duration="906000" />
+      <workItem from="1584509637614" duration="549000" />
+      <workItem from="1584516921875" duration="69000" />
+      <workItem from="1584517941434" duration="61000" />
+      <workItem from="1584528395216" duration="4000" />
+      <workItem from="1584530051934" duration="7000" />
+      <workItem from="1585544013810" duration="126000" />
+      <workItem from="1585566753683" duration="18000" />
+      <workItem from="1586442522858" duration="75000" />
+      <workItem from="1586446740873" duration="36000" />
+      <workItem from="1586447396452" duration="883000" />
+      <workItem from="1586483150059" duration="818000" />
+      <workItem from="1586661947533" duration="1530000" />
+      <workItem from="1586663839099" duration="62000" />
+      <workItem from="1586784265521" duration="5485000" />
+      <workItem from="1586821135931" duration="685000" />
+      <workItem from="1586830422516" duration="26000" />
+      <workItem from="1587460469874" duration="32000" />
+      <workItem from="1587462799866" duration="978000" />
+      <workItem from="1587465601081" duration="2011000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="798" y="83" key="#com.intellij.ide.util.MemberChooser" timestamp="1587467074028">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="798" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1587467074028" />
+    <state x="198" y="213" key="FileChooserDialogImpl" timestamp="1587466929673">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="198" y="213" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587466929673" />
+    <state width="1493" height="559" key="GridCell.Tab.0.bottom" timestamp="1587467753103">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="559" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587467753103" />
+    <state width="1493" height="559" key="GridCell.Tab.0.center" timestamp="1587467753102">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="559" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587467753102" />
+    <state width="1493" height="559" key="GridCell.Tab.0.left" timestamp="1587467753102">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="559" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587467753102" />
+    <state width="1493" height="559" key="GridCell.Tab.0.right" timestamp="1587467753103">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="559" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587467753103" />
+    <state width="1493" height="251" key="GridCell.Tab.1.bottom" timestamp="1583251979829">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="251" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583251979829" />
+    <state width="1493" height="251" key="GridCell.Tab.1.center" timestamp="1583251979828">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="251" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583251979828" />
+    <state width="1493" height="251" key="GridCell.Tab.1.left" timestamp="1583251979828">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="251" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583251979828" />
+    <state width="1493" height="251" key="GridCell.Tab.1.right" timestamp="1583251979828">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="251" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583251979828" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1586662739965">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586662739965" />
+    <state x="178" y="22" key="new project wizard" timestamp="1584439654198">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="22" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1584439654198" />
+    <state x="455" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586663148904">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="455" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586663148904" />
+  </component>
+</project>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0f579a72-c247-4725-a9f6-dea291d6b7f7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven\repository" />
+        <option name="userSettingsFile" value="D:\maven\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="useMavenOutput" value="false" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="vmOptions" value="-Dfile.encoding=GBK" />
+  </component>
+  <component name="ProjectId" id="1YcoV5VorTImIeOimOFosFGThRv" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace for idea\mybatis_relation\src\test\java" />
+      <recent name="D:\workspace for idea\mybatis_relation\src\main\resources" />
+      <recent name="D:\workspace for idea\mybatis_relation\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.Account_Test.queryOne2OneWithMap">
+    <configuration name="Account_Test.queryOne2OneWithExtends" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis_relation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chz.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chz.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chz.test.Account_Test" />
+      <option name="METHOD_NAME" value="queryOne2OneWithExtends" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Account_Test.queryOne2OneWithMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis_relation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chz.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chz.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chz.test.Account_Test" />
+      <option name="METHOD_NAME" value="queryOne2OneWithMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDao_Test.queryOne2ManyWithMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis_relation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chz.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.chz.test" />
+      <option name="MAIN_CLASS_NAME" value="com.chz.test.UserDao_Test" />
+      <option name="METHOD_NAME" value="queryOne2ManyWithMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Account_Test.queryOne2OneWithMap" />
+        <item itemvalue="JUnit.UserDao_Test.queryOne2ManyWithMap" />
+        <item itemvalue="JUnit.Account_Test.queryOne2OneWithExtends" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f579a72-c247-4725-a9f6-dea291d6b7f7" name="Default Changelist" comment="" />
+      <created>1583251263563</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583251263563</updated>
+      <workItem from="1583251267408" duration="872000" />
+      <workItem from="1583292686767" duration="4839000" />
+      <workItem from="1584407232826" duration="735000" />
+      <workItem from="1584440625247" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="520" y="113" key="#com.intellij.ide.util.MemberChooser" timestamp="1583297194897">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="520" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583297194897" />
+    <state x="405" y="158" key="FileChooserDialogImpl" timestamp="1584407257207">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="405" y="158" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584407257207" />
+    <state width="1493" height="252" key="GridCell.Tab.0.bottom" timestamp="1583297941432">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="252" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583297941432" />
+    <state width="1493" height="252" key="GridCell.Tab.0.center" timestamp="1583297941432">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="252" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583297941432" />
+    <state width="1493" height="252" key="GridCell.Tab.0.left" timestamp="1583297941432">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="252" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583297941432" />
+    <state width="1493" height="252" key="GridCell.Tab.0.right" timestamp="1583297941432">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="252" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583297941432" />
+    <state width="1493" height="252" key="GridCell.Tab.1.bottom" timestamp="1583297941432">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="252" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583297941432" />
+    <state width="1493" height="252" key="GridCell.Tab.1.center" timestamp="1583297941432">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="252" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583297941432" />
+    <state width="1493" height="252" key="GridCell.Tab.1.left" timestamp="1583297941432">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="252" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583297941432" />
+    <state width="1493" height="252" key="GridCell.Tab.1.right" timestamp="1583297941432">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="252" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583297941432" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1583251396155">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583251396155" />
+  </component>
+</project>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace属性必须是dao接口的全限定名-->
+<mapper namespace="com.chz.dao.IUserDao">
+    <resultMap id="userMap" type="user">
+        <id property="id" column="id"/>
+        <result property="sex" column="sex"/>
+        <result property="address" column="address"/>
+        <result property="birthday" column="birthday"/>
+        <result property="username" column="username"/>
+        <result property="communist" column="communist" javaType="Boolean" jdbcType="INTEGER"/>
+    </resultMap>
+<!--    提取相同的sql片段,简化代码,如果不再同一个mapper中通过namespace.id 来引用,最好将公用的提取到同一个mapper中-->
+    <sql id="username">
+        <if test="username!=null">
+            and username=#{username}
+        </if>
+    </sql>
+    <!--    if标签中的test表示条件(如果user的id不为null并且不为空就执行标签中的)-->
+    <!--    用where 1=1 是防止sql出错-->
+    <select id="queryUserByIf" parameterType="user" resultType="user">
+        select * from user where 1=1
+--         移入sql片段
+        <include refid="username"/>
+        <if test="id!=null and id!=0">
+            and id=#{id}
+        </if>
+    </select>
+    <!--    where标签相当于where,if表示where执行的条件,会自动处理符合条件的第一个if的and-->
+    <select id="queryUserByWhere" parameterType="user" resultType="user">
+        select * from user
+        <where>
+            <if test="id!=null">
+                and id=#{id}
+            </if>
+            <include refid="username"/>
+        </where>
+    </select>
+    <!--    相当于if..else if..else-->
+    <select id="queryUserByChoose" parameterType="user" resultType="user">
+        select * from user where 1=1
+        <choose>
+            <when test="username!=null">
+                and username=#{username}
+            </when>
+            <when test="id!=null">
+                and id=#{id}
+            </when>
+            <otherwise>
+                <if test="sex!=null">
+                    and sex=#{sex}
+                </if>
+            </otherwise>
+        </choose>
+    </select>
+
+    <!--    sql中的集合长度是length,不是length(),可以直接传list、collection或者是封装pojo
+            或者是八种基本类型对应自己的数组,对象数组用Object[],如果只有一个参数可以不用写
+            collection 只能是list,collection,array
+            item表示集合中的元素,相当于foreach()的a,可以任意取名字
+            open 表示id=#{user_id}以前的,close表示以后的,foreach之迭代标签中的内容
+            pojo中是item.集合或数组的属性名
+            AND(id=1 or id=2 or id=3)
+            <foreach collection="list" item="user_id" open=" AND (" close=")" separator="or">
+            id=#{user_id}-->
+    <select id="queryByForeach" parameterType="list" resultType="user">
+        select * from user
+        <where>
+            <if test="list!=null and list.size>0">
+                -- 2. id IN (1,2,3)
+                <foreach collection="list" item="user_id" open="  id IN (" close=")" separator=",">
+                    #{user_id}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
+    <!--    update注意,当两者都有的时候添加,trim suffixOverrides如果最后一个有逗号,就把逗号消灭-->
+    <update id="updateBySet" parameterType="user">
+        update user
+        <trim suffixOverrides=",">
+        <set>
+            <if test="username!=null">
+                username=#{username},
+            </if>
+            <if test="sex!=null">
+                sex=#{sex},
+            </if>
+        </set>
+        </trim>
+        where id=#{id}
+    </update>
+</mapper>

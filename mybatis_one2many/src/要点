@@ -1,0 +1,47 @@
+log4j,ehcache(采用ehcache可以设置参数)日志存储位置如果不指定盘符,默认存储在当前项目下
+想要获取maven中的resources文件按具体按照编译后的classes目录(相当)
+
+mybatis的mapper文件的namespace要与接口函数的全限定路径相同
+mapper中sql语句的id要与方法名一致
+mapper中的returnTyPe和接口中的返回值类型一样  jdbc中的Boolean是Mysql中bit
+mapper中的parameter要和接口中的参数类型一样
+mapper中的sql最好不要加注解(容易出错)!!!
+
+根据接口名==namespace找到mapper文件,根据接口名的方法名==id找到mapper中对应的sql
+mapper文件最好在resource中与接口相同的路径下
+
+最好配置动态加载db,dbProperties的key绝对不要与类的属性名相同
+
+typeAliases只针对接口
+
+如果java的属性与db中的resultType或是类名与属性名 不一致采用resultMap,或是resultType=HashMap
+
+只有一个参数是可以不用写parameterType,mybatis自动识别
+如果是简单类型的参数是可以不用写parameterType,#{'属性名'}字符类型默认加单引号,${属性名}不加''
+    1.当只有一个参数时可以#是#{任意},$必须是${value}(如果想采用'${value}')
+    2.当有多个参数时不需要指明parameterType用#{arg0}或是#{param0}递增的这种形式表示,或是在接口中用@Param来修改参数
+当参数传入对象时,需要写出parameterType
+${}常用于动态排序表示列名,不可以防止sql注入
+#{}能防止sql注入
+两者都支持级联属性
+
+要在配置文件中加入typeHandlers
+如果增删改类型转换,在参数中加入类型转换器
+#{communist,typeHandler=com.chz.transfer.TypeTransfer}
+
+sql语句是调用函数或是过程(statementType用CALLABLE),
+一般用hashMap做参数也可以用javaBean,sql外层可以套{可以换行},否则不能换行
+参数IN用map.put ,参数OUT用map.get(对应sql中的OUT参数值)
+
+一对一或是多对一映射用association ,一对多或是多对多映射用collection
+
+
+一级缓存(同一个mapper对象共享一级缓存):如果查询同样的对象sql只在第一次查询数据库时向数据库发送sql语句
+将查询结果放入一级缓存中;后续查询一样的对象时(省略对数据库的访问)
+一级缓存(只针对查询(查询不会调用commit),mybatis默认开启一级缓存)在commit之后清空一级缓存中的内容
+二级缓存(默认关闭):产生的mapper对象是来自同一个namespace(接口).class,则共享二级缓存(任何二级缓存要实现Cache接口)
+在commit之后清空二级缓存中的内容,但是如果是select当前的commit(同一个sqlSession)会清除二级缓存
+开启二级缓存查询结果相关的实体类必需实现序列化 !important二级缓存会造成数据脏读
+如果同一sqlSession对象查询同一个对象,查询进入一级缓存
+如果不同sqlSession对象但是同一namespace(接口.class)查询同一个对象,查询进入二级缓存
+

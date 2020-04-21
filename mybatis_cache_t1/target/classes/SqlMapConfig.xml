@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--mybatis主配置文件-->
+<!--配置环境-->
+<configuration>
+    <settings>
+<!--        开启二级缓存,还要再mapper中配置-->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    <environments default="mysql">
+        <!--        配置mysql环境-->
+        <environment id="mysql">
+            <!--            配置数据源(连接池)-->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--            配置连接数据库的4个基本信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis_test"/>
+                <property name="username" value="root"/>
+                <property name="password" value="12345"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--        指定映射配置的文件的位置,映射配置文件指的是每个dao独立的配置文件-->
+    <mappers>
+        <package name="com/chz/dao"></package>
+    </mappers>
+</configuration>

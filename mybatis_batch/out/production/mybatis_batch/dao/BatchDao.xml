@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BatchDao">
+    <insert id="batchInsert" parameterType="batch">
+        insert into batch_test values(#{name},#{age})
+    </insert>
+<!--    mysql批量注入insert into table1 values(),()....-->
+<!--    批量insert,当只有一个参数是可以不用写出parameterType,mybatis会自动识别-->
+    <insert id="batchForEach"  databaseId="mysql">
+        insert into batch_test
+        <foreach collection="list" item="data" open="values"  separator=",">
+            (#{data.name},#{data.age})
+        </foreach>
+    </insert>
+</mapper>

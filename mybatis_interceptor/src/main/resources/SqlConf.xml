@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>
+    <typeAliases>
+        <package name="pojo"/>
+    </typeAliases>
+<!--    配置拦截器,拦截器链式-->
+    <plugins>
+        <plugin interceptor="interceptor.MyInterceptor">
+<!--            想sql传参数-->
+            <property name="name" value="zs"/>
+            <property name="age" value="23"/>
+        </plugin>
+<!--        <plugin interceptor="interceptor.MyInterceptor2">-->
+<!--            <property name="name" value="五五"/>-->
+<!--            <property name="age" value="324"/>-->
+<!--        </plugin>-->
+    </plugins>
+<!--    通过default指定环境-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="db.BDCPDataSource">
+                <property name="driverClassName" value="${mysql.driver}"/>
+                <property name="url" value="${mysql.url}"/>
+                <property name="username" value="${mysql.username}"/>
+                <property name="password" value="${mysql.password}"/>
+            </dataSource>
+        </environment>
+        <environment id="production">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driverClassName" value="${mysql.driver}"/>
+                <property name="url" value="${mysql.url}"/>
+                <property name="username" value="${mysql.username}"/>
+                <property name="password" value="${mysql.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="dao"/>
+    </mappers>
+</configuration>

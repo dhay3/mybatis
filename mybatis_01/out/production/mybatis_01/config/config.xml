@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    配置类型转换器-->
+    <typeHandlers>
+<!--        jdbcType对照表格-->
+        <typeHandler handler="transfer.TypeTransfer" javaType="Boolean" jdbcType="INTEGER"/>
+    </typeHandlers>
+    <!--    通过environment的default值和id值指定mybatis的运行时的开发环境-->
+    <environments default="development">
+        <environment id="development">
+<!--            配置事务提交的方式
+                JDBC:利用传统的JDBC方式(手动commit,rollback,close)
+                MANAGED:将事务交由其他组件自动托管(如spring),默认关闭连接
+-->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis_test"/>
+                <property name="username" value="root"/>
+                <property name="password" value="12345"/>
+            </dataSource>
+        </environment>
+        <!--        可以有多个environment-->
+        <environment id="test">
+            <!--            数据源:
+               UNPOOLED:传统jdbc连接模式
+               POOLED:使用数据库连接池
+               JNDI:从tomcat中获取
+               -->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis_test"/>
+                <property name="username" value="root"/>
+                <property name="password" value="12345"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--        对应mapper文件路径-->
+        <mapper resource="config/mapper.xml"/>
+    </mappers>
+</configuration>

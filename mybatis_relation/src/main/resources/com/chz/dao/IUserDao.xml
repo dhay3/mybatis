@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace属性必须是dao接口的全限定名-->
+<mapper namespace="com.chz.dao.IUserDao">
+    <resultMap id="userMap" type="user">
+        <id property="id" column="id"/>
+        <result property="sex" column="sex"/>
+        <result property="address" column="address"/>
+        <result property="birthday" column="birthday"/>
+        <result property="username" column="username"/>
+        <result property="communist" column="communist" javaType="Boolean" jdbcType="INTEGER"/>
+<!--       一对多,多对一是ofType-->
+        <collection property="accounts" ofType="account">
+            <id property="ID" column="aid"/>
+            <result property="UID" column="uid"/>
+            <result property="MONEY" column="money"/>
+        </collection>
+    </resultMap>
+    <select id="queryOne2ManyWithMap" resultMap="userMap">
+        select * from user u join account a on u.id=a.uid
+    </select>
+
+</mapper>

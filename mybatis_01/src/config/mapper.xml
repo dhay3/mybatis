@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace一定要对应类的全限定路径(表示当前mapper文件的唯一标识)-->
+<mapper  namespace="dto.IUserDao">
+        <select id="queryByProcedure" parameterType="HashMap" resultType="String">
+            {call  procedure  mybatis_p()}
+        </select>
+    <select id="select" resultType="String">
+        select * from user where id=#{1}
+    </select>
+
+</mapper>

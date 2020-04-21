@@ -1,0 +1,8 @@
+2020-03-05 18:41:36,401 0      [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2020-03-05 18:41:47,740 0      [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2020-03-05 18:42:07,298 0      [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.commons.JakartaCommonsLoggingImpl' adapter.
+2020-03-05 18:42:07,518 220    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Opening JDBC Connection
+2020-03-05 18:42:07,714 416    [           main] DEBUG      org.dao.IUserDao.queryAll  - ==>  Preparing: select * from user 
+2020-03-05 18:42:07,747 449    [           main] DEBUG      org.dao.IUserDao.queryAll  - ==> Parameters: 
+2020-03-05 18:42:07,778 480    [           main] DEBUG      org.dao.IUserDao.queryAll  - <==      Total: 7
+2020-03-05 18:42:07,782 484    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Closing JDBC Connection [jdbc:mysql://localhost:3306/mybatis_test?useSSL=false&serverTimezone=Asia/Shanghai, UserName=root@localhost, MySQL Connector/J]

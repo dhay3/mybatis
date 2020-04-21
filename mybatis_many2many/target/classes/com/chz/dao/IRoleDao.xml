@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace属性必须是dao接口的全限定名-->
+<mapper namespace="com.chz.dao.IRoleDao">
+    <resultMap id="roleMap" type="com.chz.entity.Role">
+        <id property="roleID" column="rid"></id>
+        <result property="roleName" column="ROLE_NAME"></result>
+        <result property="roleDesc" column="ROLE_DESC"></result>
+<!--        ofType是property里元素的类型-->
+            <collection property="users" ofType="user">
+                <id property="id" column="id"></id>
+                <result property="username" column="username"></result>
+                <result property="address" column="address"></result>
+                <result property="sex" column="sex"></result>
+                <result property="birthday" column="birthday"></result>
+            </collection>
+    </resultMap>
+<!--    mybatis 默认不是骆驼峰命名,需要手动开启-->
+    <select id="selectRole" resultMap="roleMap">
+<!--    <select id="selectRole" resultType="role">-->
+            select u.*,r.id as rid,r.role_name,r.role_desc from role r
+        left outer join user_role ur  on r.id = ur.rid
+        left outer join user u on u.id = ur.uid
+    </select>
+
+</mapper>
+
